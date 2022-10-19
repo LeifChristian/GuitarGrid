@@ -19,8 +19,8 @@ const row10 = ["D_","G_","C_","F_","A_","D_"]
 const row11 = ["D#","G#","C#","F#","A#","D#"]
 const row12 = ["E_","A_","D_","G_","B_","E_"]
 const row13 = ["F_","A#","D#","G#","C_","F_"]
-const row14 = ["F#","C_","E_","A_","C#","F#"]
-const row15 = ["G_","C#","F_","A#","D_","G_"]
+const row14 = ["F#","B_","E_","A_","C#","F#"]
+const row15 = ["G_","C_","F_","A#","D_","G_"]
 const row16 = ["G#","C#","F#","B_","D#","G#"]
 const row17 = ["A_","D_","G_","C_","E_","A_"]
 const row18 = ["A#","D#","G#","C#","F_","A#"]
@@ -142,7 +142,7 @@ const [fullFretBoard, setFullFretBoard] = useState(true);
         case 0: // E default
           setMinorScale(["E_", "F#", "G_","A_", "B_", "C_", "D_"])
           break;
-          case 1: setMinorScale( ["F_", "G_", "G#", "A#", "C#", "D#", "E_"])
+          case 1: setMinorScale( ["F_", "G_", "G#", "A#", "C_", "C#", "D#"])
           break;
           case 2: setMinorScale(["F#","G#","A_","B_","C#","D_","E_"])
           break;
@@ -156,13 +156,13 @@ const [fullFretBoard, setFullFretBoard] = useState(true);
           break;
           case 7: setMinorScale(["B_","C#","D_","E_","F#","G_","A_"])
           break;
-          case 8: setMinorScale(["C_","D_","E_","F_","G_","A_","B_"])
+          case 8: setMinorScale(["C_","D_","D#","F_","G_","G#","A#"])
           break;
-          case 9: setMinorScale(["C#","D#","F_","F#","G#","A#","C_"])
+          case 9: setMinorScale(["C#","D#","E_","F#","G#","A_","B_"])
           break;
-          case 10: setMinorScale(["D_","E_","F#","G_","A_","B_","C#"])
+          case 10: setMinorScale(["D_","E_","F_","G_","A_","A#","C_"])
           break;
-          case 11: setMinorScale(["D#","F_","G_","G#","A#","C_","D_"])
+          case 11: setMinorScale(["D#","F_","F#","G#","A#","B_","C#"])
 
           break;
       }
@@ -189,13 +189,13 @@ const [fullFretBoard, setFullFretBoard] = useState(true);
           break;
           case 7: setHarmMinorScale(["B_","C#","D_","E_","F#","G_","A#"])
           break;
-          case 8: setHarmMinorScale(["C_","D_","E_","F_","G_","A_","C_"])
+          case 8: setHarmMinorScale(["C_","D_","D#","F_","G_","G#","B_"])
           break;
-          case 9: setHarmMinorScale(["C#","D#","F_","F#","G#","A#","C#"])
+          case 9: setHarmMinorScale(["C#","D#","E_","F#","G#","A_","C_"])
           break;
-          case 10: setHarmMinorScale(["D_","E_","F#","G_","A_","B_","D_"])
+          case 10: setHarmMinorScale(["D_","E_","F_","G_","A_","A#","C#"])
           break;
-          case 11: setHarmMinorScale(["D#","F_","G_","G#","A#","C_","D#"])
+          case 11: setHarmMinorScale(["D#","F_","F#","G#","A#","B_","D_"])
           break;
       }
     
