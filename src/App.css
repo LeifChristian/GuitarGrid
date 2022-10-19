@@ -7,9 +7,11 @@
 
 html {text-align: center;
   align-items: center;
-  justify-content: center;}
+  justify-content: center;
+background-color: magenta;
+}
 
-button {background-color: black; color: white; font-weight: 600; border-radius: .2em;} 
+button {background-color: black; color: white; font-weight: 600; border-radius: .2em; margin-right: 4px;} 
 
 .App-logo {
   height: 40vmin;

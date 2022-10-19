@@ -1,12 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import MIDISounds from 'midi-sounds-react';
 import { useState, useEffect } from 'react';
-import { looseIndexOf } from '@vue/shared';
-
-// let major = false;
-// let minor = false;
-// let harm = true;
 
 let midiSounds;
 
@@ -614,14 +608,11 @@ function App() {
 const [majorScale, setMajorScale] = useState(["E_", "F#", "G#","A_", "B_", "C#", "D#"])
 const [minorScale, setMinorScale] = useState(["E_", "F_", "G_","A_", "B_", "C_", "D_", "E_"])
 const [harmMinorScale, setHarmMinorScale]= useState(["E_", "F_", "G_","A_", "B_", "C_", "D#", "E_"])
-  
-  const [position, setPosition] = useState(1);
-  const[theName, setTheName] = useState("")
-  const [major, setMajor] = useState(true);
-  const [minor, setMinor] = useState(false);
-  const [harmMinor, setHarmMinor] = useState(false);
- 
-   const [scaleNumber, setScaleNumber] = useState(0);
+const [position, setPosition] = useState(1);
+const [major, setMajor] = useState(true);
+const [minor, setMinor] = useState(false);
+const [harmMinor, setHarmMinor] = useState(false);
+const [scaleNumber, setScaleNumber] = useState(0);
 
    //starting scale numbers on E as 0, F = 1, etc until D#=11
 
@@ -730,11 +721,6 @@ const [harmMinorScale, setHarmMinorScale]= useState(["E_", "F_", "G_","A_", "B_"
 
   const renderRow = (names, row) => {
 
-    // let setScaleDegrees = majorScale.map((item, index)=>{return index + 1})
-
-    // console.log('degrees', setScaleDegrees)
-  
-  
 console.log(names, 'neem', row, 'row')
     if(major){
     return (
@@ -815,6 +801,13 @@ console.log(names, 'neem', row, 'row')
     
   }
 
+let rowrender1 = `row${position-1}`
+let rowrender2= `row${position}`
+let rowrender3 = `row${position+1}`
+let rowrender4 = `row${position+2}`
+let rowrender5 = `row${position+3}`
+const [fullFretBoard, setFullFretBoard] = useState(true);
+
   return (
 
     <>
@@ -825,54 +818,48 @@ console.log(names, 'neem', row, 'row')
 
       <div style={{}}>
 
-     {position === 1 ? [renderRow(row0, 0),renderRow(row1, 1), renderRow(row2, 2), renderRow(row3, 3), renderRow(row4, 4), renderRow(row5, 5)]: null}
- 
-      {position === 2 ? [renderRow(row6,6),
-      renderRow(row7,7),
-      renderRow(row8,8),
-      renderRow(row9,9),
-      renderRow(row10,10)]:null}
 
+        {fullFretBoard ?
 
-      {position === 3 ? [renderRow(row11,11),
-      renderRow(row12,12),
-      renderRow(row13,13),
-      renderRow(row14,14),
-      renderRow(row15,15)]:null}
+     [renderRow(row0, 0), renderRow(row1, 1), renderRow(row2, 2), 
+      renderRow(row3, 3), renderRow(row4, 4), renderRow(row5, 5), 
+      renderRow(row6,6), renderRow(row7,7),renderRow(row8,8),
+      renderRow(row9,9), renderRow(row10,10),renderRow(row11,11),
+      renderRow(row12,12),renderRow(row13,13),renderRow(row14,14),
+      renderRow(row15,15), renderRow(row16,16),renderRow(row17,17),
+      renderRow(row18,18),renderRow(row19,19),
+      renderRow(row20,20)]
 
-      { position === 4 ? [renderRow(row16,16),
-      renderRow(row17,17),
-      renderRow(row18,18),
-      renderRow(row19,19),
-      renderRow(row20,20)]: null}
+ : [renderRow(eval(rowrender1), position-1), renderRow(eval(rowrender2), position), 
+      renderRow(eval(rowrender3), position+1), renderRow(eval(rowrender4), position+2), 
+      renderRow(eval(rowrender5), position+3)] }
 
 </div>
     </div>
 
 
-<div style={{margin:'auto',  width: "10%"}}>
-   <div style={{width: "100%", marginTop: "10%"}}> position: {position}</div>
-   <div style={{width: "100%", marginTop: "10%"}}> key: {major ? majorScale[0] : minor ? minorScale[0] : harmMinor ? harmMinorScale[0]: null}
-   {major? <div style={{textAlign: "center"}}>major</div> : minor ? <div style={{textAlign: "center"}}>minor</div> : harmMinor ? <div style={{textAlign: "center"}}>harmonic</div> : null   }
+<div style={{margin:'auto',  width: "15%"}}>
+   <div style={{width: "100%", marginTop: "10%",fontWeight: 'bold'}}> Position: {position}</div>
+   <div style={{fontWeight: 'bold' }}> Key: {major ? majorScale[0] : minor ? minorScale[0] : harmMinor ? harmMinorScale[0]: null}
+   { major? ' major': minor ? ' minor' : harmMinor ? ' harmonic' : null   }
    </div>
-   <div style={{width: "100%", marginTop: "10%"}}> Scale Number: {scaleNumber}</div>
+   <div style={{fontWeight: 'bold'}}>Scale Number: {scaleNumber}</div> <br />
+   <button style={{ borderRadius: '1rem',
+      alignItems: 'center', }} onClick={()=>{if(position<19)setPosition(prevState=>prevState+1)}}>Position 🠕</button>
 
-
-    <button style={{marginTop: '10%', textAlign: 'center', position: 'relative', justifyContent: 'center', borderRadius: '1rem',
-      alignItems: 'center'}} onClick={()=>{if(position>1)setPosition(prevState=>prevState-1)}}>position down</button>
-     <button style={{justifyContent: 'center', borderRadius: '1rem',
-      alignItems: 'center', }} onClick={()=>{if(position<4)setPosition(prevState=>prevState+1)}}>position up</button>
-
+    <button style={{ textAlign: 'center',  borderRadius: '1rem',
+      alignItems: 'center', marginBottom: '3%'}} onClick={()=>{if(position>1)setPosition(prevState=>prevState-1)}}>Position 🠗</button>
+   
       <br />
 
-<button style={{borderRadius: '1rem'}} onClick={()=>{if(scaleNumber<11)setScaleNumber(scaleNumber+1)}}>up </button>
-<button style={{borderRadius: '1rem'}} onClick={()=>{if(scaleNumber>0)setScaleNumber(scaleNumber-1)}}>down</button>
-
-
-
+<button style={{borderRadius: '1rem'}} onClick={()=>{if(scaleNumber<11)setScaleNumber(scaleNumber+1)}}>key 🠕</button>
+<button style={{borderRadius: '1rem',fontWeight: 'bold', marginBottom: '3%'}} onClick={()=>{if(scaleNumber>0)setScaleNumber(scaleNumber-1)}}>key 🠗</button>
+<br />
 <button style={{borderRadius: '1rem'}} onClick={() =>{setMajor(true); setMinor(false); setHarmMinor(false)}}>Major{major}</button>
 <button style={{borderRadius: '1rem'}} onClick={() =>{setMajor(false); setMinor(true); setHarmMinor(false)}}>Minor{major}</button>
 <button style={{borderRadius: '1rem',textAlign: "center"}} onClick={() => {setHarmMinor(true); setMinor(false); setMajor(false)}}>Harmonic{harmMinor}</button>
+
+<button style={{borderRadius: '1rem', textAlign: 'center'}} onClick={()=>{setFullFretBoard(prevState=>!prevState)}}>{fullFretBoard ? 'Full' : 'Position'}</button>
 
 </div>
     </>
