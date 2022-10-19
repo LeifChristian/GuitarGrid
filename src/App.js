@@ -210,22 +210,23 @@ const [fullFretBoard, setFullFretBoard] = useState(true);
     if(major){
     return (
   
-      <div style={{display: 'flex', }}>
+      <div style={{margin:'auto',height: 22}}>
   
         { row<10 ?
         
-        <div style={{marginRight: "11px", textAlign: "left", }}>  {row} </div>:
-        <div style={{marginRight: "0px", textAlign: "left"}}>{row}</div>
+        <div style={{marginRight: "11px", marginRight: 270,marginBottom: -22, fontWeight: 'bold'}}>  {row} </div>:
+        <div style={{marginRight: "0px", marginRight: 270,marginBottom: -22, fontWeight: 'bold'}}>{row}</div>
         }
    { names.map((theName, index) => 
   
    theName == majorScale[0] || theName == majorScale[1] || theName == majorScale[2] || theName == majorScale[3]
    || theName == majorScale[4]|| theName == majorScale[5]|| theName == majorScale[6] ?
     
-  <button style={{marginLeft: "1%", width: '120%', position:'relative' , border: 'solid 2px'}} onClick={()=>{press(index, row, theName)}}> <div>
+  <button style={{ width: 40,  border: 'solid 2px'}} onClick={()=>{press(index, row, theName)}}> <div>
       {theName.charAt(1) == '_' ? theName.charAt(0) + '_' : theName}
       
-      {majorScale.indexOf(theName)+mode == -6 ? '1': majorScale.indexOf(theName)+mode == -5 ? '2': majorScale.indexOf(theName)+mode == -4 ? '3': majorScale.indexOf(theName)+mode == -3 ? '4': majorScale.indexOf(theName)+mode == -2 ? '5': majorScale.indexOf(theName)+mode == -1 ? '6': majorScale.indexOf(theName)+mode == 0 ? '7': majorScale.indexOf(theName)+mode}</div></button> : <button style={{marginLeft: "24%", width: '120%', opacity: 0,}} 
+      {majorScale.indexOf(theName)+mode == -6 ? '1': majorScale.indexOf(theName)+mode == -5 ? '2': majorScale.indexOf(theName)+mode == -4 ? '3': majorScale.indexOf(theName)+mode == -3 ? '4': majorScale.indexOf(theName)+mode == -2 ? '5': majorScale.indexOf(theName)+mode == -1 ? '6': majorScale.indexOf(theName)+mode == 0 ? '7': majorScale.indexOf(theName)+mode}</div></button> 
+      : <button style={{ width: 40, opacity: 0,}} 
               onClick={()=>{console.log(index,row, theName)}}><div>
       __</div></button>
     
@@ -235,22 +236,23 @@ const [fullFretBoard, setFullFretBoard] = useState(true);
 
       return (
     
-        <div style={{display: 'flex'}}>
+        <div style={{margin: 'auto', height: 22}}>
     
           { row<10 ?
           
-          <div style={{marginRight: "11px", textAlign: "left"}}>  {row}</div>:
-          <div style={{marginRight: "2px", textAlign: "left"}}>{row}</div>
+          <div style={{marginRight: "11px", marginRight: 270,marginBottom: -22, fontWeight: 'bold'}}>  {row} </div>:
+          <div style={{marginRight: "0px", marginRight: 270,marginBottom: -22, fontWeight: 'bold'}}>{row}</div>
           }
      { names.map((theName, index) => 
     
      theName == minorScale[0] || theName == minorScale[1] || theName == minorScale[2] || theName == minorScale[3]
      || theName == minorScale[4]|| theName == minorScale[5]|| theName == minorScale[6] ?
       
-    <button style={{marginLeft: "1%", width: '120%', position:'relative' , border: 'solid 2px'}}  onClick={()=>{press(index, row, theName)}}><div>
+    <button style={{ width: 40, position:'relative' , border: 'solid 2px'}}  onClick={()=>{press(index, row, theName)}}><div>
      {theName.charAt(1) == '_' ? theName.charAt(0) +'_' : theName}
      
-     {minorScale.indexOf(theName)+mode == -6 ? '1': minorScale.indexOf(theName)+mode == -5 ? '2': minorScale.indexOf(theName)+mode == -4 ? '3': minorScale.indexOf(theName)+mode == -3 ? '4': minorScale.indexOf(theName)+mode == -2 ? '5': minorScale.indexOf(theName)+mode == -1 ? '6': minorScale.indexOf(theName)+mode == 0 ? '7': minorScale.indexOf(theName)+mode}</div></button> : <button style={{marginLeft: "24%", width: '120%', opacity: 0,}} 
+     {minorScale.indexOf(theName)+mode == -6 ? '1': minorScale.indexOf(theName)+mode == -5 ? '2': minorScale.indexOf(theName)+mode == -4 ? '3': minorScale.indexOf(theName)+mode == -3 ? '4': minorScale.indexOf(theName)+mode == -2 ? '5': minorScale.indexOf(theName)+mode == -1 ? '6': minorScale.indexOf(theName)+mode == 0 ? '7': minorScale.indexOf(theName)+mode}</div></button> : 
+     <button style={{width: 40, opacity: 0,}} 
                 onClick={()=>{console.log(index,row, theName)}}><div>
         __</div></button>
 
@@ -261,21 +263,20 @@ const [fullFretBoard, setFullFretBoard] = useState(true);
   
         return (
       
-          <div style={{display: 'flex'}}>
+          <div style={{margin: 'auto', height: 22}}>
       
             { row<10 ?
-            
-            <div style={{marginRight: "11px", textAlign: "left"}}>  {row}</div>:
-            <div style={{marginRight: "2px", textAlign: "left"}}>{row}</div>
+               <div style={{marginRight: "11px", marginRight: 270,marginBottom: -22, fontWeight: 'bold'}}>  {row} </div>:
+               <div style={{marginRight: "0px", marginRight: 270,marginBottom: -22, fontWeight: 'bold'}}>{row}</div>
             }
        { names.map((theName, index) => 
       
        theName == harmMinorScale[0] || theName == harmMinorScale[1] || theName == harmMinorScale[2] || theName == harmMinorScale[3]
        || theName == harmMinorScale[4]|| theName == harmMinorScale[5]|| theName == harmMinorScale[6] ?
         
-      <button style={{marginLeft: "1%", width: '120%', position:'relative' , border: 'solid 2px'}} onClick={()=>{press(index, row, theName)}}><div>
+      <button style={{ width: 40, position:'relative' , border: 'solid 2px'}} onClick={()=>{press(index, row, theName)}}><div>
         {theName.charAt(1) == '_' ? theName.charAt(0)+ '_' : theName}
-        {harmMinorScale.indexOf(theName)+mode == -6 ? '1': harmMinorScale.indexOf(theName)+mode == -5 ? '2': harmMinorScale.indexOf(theName)+mode == -4 ? '3': harmMinorScale.indexOf(theName)+mode == -3 ? '4': harmMinorScale.indexOf(theName)+mode == -2 ? '5': harmMinorScale.indexOf(theName)+mode == -1 ? '6': harmMinorScale.indexOf(theName)+mode == 0 ? '7': harmMinorScale.indexOf(theName)+mode}</div></button> :  <button style={{marginLeft: "24%", width: '120%', opacity: 0,}} 
+        {harmMinorScale.indexOf(theName)+mode == -6 ? '1': harmMinorScale.indexOf(theName)+mode == -5 ? '2': harmMinorScale.indexOf(theName)+mode == -4 ? '3': harmMinorScale.indexOf(theName)+mode == -3 ? '4': harmMinorScale.indexOf(theName)+mode == -2 ? '5': harmMinorScale.indexOf(theName)+mode == -1 ? '6': harmMinorScale.indexOf(theName)+mode == 0 ? '7': harmMinorScale.indexOf(theName)+mode}</div></button> :  <button style={{ width: 40, opacity: 0,}} 
                   onClick={()=>{console.log(index,row, theName)}}><div>
           __</div></button>
         
@@ -884,7 +885,7 @@ let rowrender5 = `row${position+3}`
 <div style = {{display: "none"}}>
     <MIDISounds ref={(ref) => (midiSounds = ref)} appElementName="root" instruments={[7]} />	</div>
 
-    <div className="App" style={{width: "3%", marginTop: '200px', marginBottom: '20px', margin:'auto', marginLeft: "40%", alignItems:'center', justifyContent: 'center', }}>
+    <div className="App" style={{marginTop: '10px', marginBottom: '2px',  }}>
 
       <div style={{}}>
 
@@ -906,40 +907,47 @@ let rowrender5 = `row${position+3}`
 </div>
     </div>
 
-<div style={{margin:'auto',  width: "18%"}}>
-   <div style={{width: "100%", marginTop: "4%",fontWeight: 'bold'}}> Position: {position}, Key: {major ? majorScale[0] : minor ? minorScale[0] : harmMinor ? harmMinorScale[0]: null}
+<div style={{margin:'auto',}}>
+   <div style={{ marginTop: "1%",fontWeight: 'bold'}}> Position: {position}, Key: {major ? majorScale[0] : minor ? minorScale[0] : harmMinor ? harmMinorScale[0]: null}
    { major? ' major': minor ? ' minor' : harmMinor ? ' harmonic' : null   }
    </div>
-   {/* <div style={{fontWeight: 'bold'}}>Scale Number: {scaleNumber}</div>  */}
 
    { major?<>
-   <div style={{fontWeight: 'bold'}}>Mode: {modeName}</div></>: null}
+   <div style={{fontWeight: 'bold',}}>Mode: {modeName}</div></>: null}
+
+<div style={{display: "flex",  flexDirection: "row", width: "38%", margin: 'auto',  flexWrap: 'wrap', justifyContent: 'center', marginBottom: '.5%'}}>
+
+   {/* <div style={{fontWeight: 'bold'}}>Scale Number: {scaleNumber}</div>  */}
+
+
+
 
 
    { !fullFretBoard ?
 
 <>
     <button style={{ textAlign: 'center',  borderRadius: '1rem',
-      alignItems: 'center', marginBottom: '3%'}} onClick={()=>{if(position>1)setPosition(prevState=>prevState-1)}}>Position 🠗</button>
+      alignItems: 'center', marginBottom: '1%'}} onClick={()=>{if(position>1)setPosition(prevState=>prevState-1)}}>Position 🠗</button>
          <button style={{ borderRadius: '1rem',
-      alignItems: 'center', }} onClick={()=>{if(position<19)setPosition(prevState=>prevState+1)}}>Position 🠕</button></> : null}
+      alignItems: 'center' }} onClick={()=>{if(position<19)setPosition(prevState=>prevState+1)}}>Position 🠕</button></> : null}
    
-      <br />
+    
 
-      <button style={{borderRadius: '1rem',fontWeight: 'bold', marginBottom: '3%'}} onClick={()=>{if(scaleNumber>0)setScaleNumber(scaleNumber-1)}}>key 🠗</button>
-<button style={{borderRadius: '1rem'}} onClick={()=>{if(scaleNumber<11)setScaleNumber(scaleNumber+1)}}>key 🠕</button>
-
-<br />
+      <button style={{borderRadius: '1rem',fontWeight: 'bold',flex: 1,}} onClick={()=>{if(scaleNumber>0)setScaleNumber(scaleNumber-1)}}>key 🠗</button>
+<button style={{borderRadius: '1rem', flex: 1}} onClick={()=>{if(scaleNumber<11)setScaleNumber(scaleNumber+1)}}>key 🠕</button>
 
 
-<button style={{borderRadius: '1rem',fontWeight: 'bold', marginBottom: '3%'}} 
+
+
+<button style={{borderRadius: '1rem',fontWeight: 'bold', flex: 1}} 
                   onClick={()=>{  setMode(mode-1); console.log(mode, 'new mode'); checkMode()}}>Mode </button>
                  
 
-<br />
-<button style={{borderRadius: '1rem'}} onClick={() =>{setMajor(true); setMinor(false); setHarmMinor(false)}}>Major{major}</button>
-<button style={{borderRadius: '1rem'}} onClick={() =>{setMajor(false); setMinor(true); setHarmMinor(false)}}>Minor{major}</button>
-<button style={{borderRadius: '1rem',textAlign: "center"}} onClick={() => {setHarmMinor(true); setMinor(false); setMajor(false)}}>Harmonic{harmMinor}</button>
+</div> <div style={{display: "flex",  flexDirection: "row", width: "38%", margin: 'auto', flexWrap: 'wrap',}}>
+<button style={{borderRadius: '1rem',flex: 1,}} onClick={() =>{setMajor(true); setMinor(false); setHarmMinor(false)}}>Major{major}</button>
+<button style={{borderRadius: '1rem', flex: 1}} onClick={() =>{setMajor(false); setMinor(true); setHarmMinor(false)}}>Minor{major}</button>
+<button style={{borderRadius: '1rem', flex: 1, textAlign: "center"}} onClick={() => {setHarmMinor(true); setMinor(false); setMajor(false)}}>Harmonic{harmMinor}</button>
+
 
 
 {/* <button style={{borderRadius: '1rem'}} onClick={()=>{ if(modeName=="Ionian/Root"){return;} 
@@ -947,14 +955,14 @@ if(mode==0){setMode(0);checkMode()}
 }}>mode 🠗</button> */}
 
 
-<hr />
 
 
-<button style={{borderRadius: '1rem', textAlign: 'center'}} onClick={()=>{setFullFretBoard(prevState=>!prevState)}}>{fullFretBoard ? 'Full' : 'Position'}</button>
+
+<button style={{borderRadius: '1rem', textAlign: 'center', flex: 1}} onClick={()=>{setFullFretBoard(prevState=>!prevState)}}>{fullFretBoard ? 'Full' : 'Position'}</button>
 <br />
 
 
-
+</div>
 </div>
     </>
   );
