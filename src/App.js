@@ -2,8 +2,9 @@ import './App.css';
 import MIDISounds from 'midi-sounds-react';
 import { useState, useEffect } from 'react';
 
-let midiSounds;
 
+
+let midiSounds;
 const row0 = ["E_","A_","D_","G_","B_","E_"]
 const row1 = ["F_","A#","D#","G#","C_","F_"]
 const row2 = ["F#","B_","E_","A_","C#","F#"]
@@ -55,566 +56,49 @@ const base20=60
 const base21=61
 const base22=62
 
-
-
-const press = (index, row) => {
-
-  console.log(row, index)
-
-  switch(row){
-
-      case 0:
-      switch(index){
-        case 0:
-
-  midiSounds.playChordNow(2,[base], 2.5);
-          break;
-        case 1:
-  midiSounds.playChordNow(2, [base+5], 2.5);
-          break;
-        case 2:
-  midiSounds.playChordNow(2, [base+10], 2.5);
-          break;
-        case 3:
-  midiSounds.playChordNow(2, [base+15], 2.5);
-          break;
-        case 4:
-  midiSounds.playChordNow(2, [base+19], 2.5); 
-          break;
-        case 5: 
-  midiSounds.playChordNow(2, [base+24], 2.5);
-          break;
-      }
-      break;
-      case 1:
-      switch(index){
-        case 0:
-  
-  midiSounds.playChordNow(2, [base1], 2.5);
-          break;
-        case 1:
-  midiSounds.playChordNow(2, [base1+5], 2.5);
-          break;
-        case 2:
-  midiSounds.playChordNow(2, [base1+10], 2.5);
-          break;
-        case 3:
-  midiSounds.playChordNow(2, [base1+15], 2.5);
-          break;
-        case 4:
-  midiSounds.playChordNow(2, [base1+19], 2.5); 
-          break;
-        case 5: 
-  midiSounds.playChordNow(2, [base1+24], 2.5);
-          break;
-      }
-      break;
-      case 2:
-
-      switch(index){
-        case 0:
-  
-  midiSounds.playChordNow(2, [base2], 2.5);
-          break;
-        case 1:
-  midiSounds.playChordNow(2, [base2+5], 2.5);
-          break;
-        case 2:
-  midiSounds.playChordNow(2, [base2+10], 2.5);
-          break;
-        case 3:
-  midiSounds.playChordNow(2, [base2+15], 2.5);
-          break;
-        case 4:
-  midiSounds.playChordNow(2, [base2+19], 2.5); 
-          break;
-        case 5: 
-  midiSounds.playChordNow(2, [base2+24], 2.5);
-          break;
-      }
-
-        break;
-      case 3:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base3], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base3+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base3+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base3+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base3+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base3+24], 2.5);
-        break;
-    }
-        break;
-      case 4:
-
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base4], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base4+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base4+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base4+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base4+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base4+24], 2.5);
-        break;
-    }
-      break;
-      case 5:
-
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base5], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base5+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base5+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base5+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base5+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base5+24], 2.5);
-        break;
-    }
-      break;
-      case 6:
-
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base6], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base6+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base6+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base6+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base6+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base6+24], 2.5);
-        break;
-    }
-      break;
-      case 7:
-
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base7], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base7+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base7+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base7+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base7+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base7+24], 2.5);
-        break;
-    }
-      break;
-      case 8:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base8], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base8+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base8+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base8+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base8+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base8+24], 2.5);
-        break;
-    }
-      break;
-      case 9:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base9], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base9+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base9+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base9+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base9+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base9+24], 2.5);
-        break;
-    }
-      break;
-      case 10:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base10], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base10+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base10+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base10+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base10+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base10+24], 2.5);
-        break;
-    }
-      break;
-      case 11:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base11], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base11+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base11+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base11+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base11+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base11+24], 2.5);
-        break;
-    }
-      break;
-      case 12:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base12], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base12+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base12+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base12+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base12+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base12+24], 2.5);
-        break;
-    }
-      break;
-      case 13:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base13], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base13+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base13+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base13+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base13+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base13+24], 2.5);
-        break;
-    }
-      break;
-      case 14:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base14], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base14+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base14+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base14+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base14+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base14+24], 2.5);
-        break;
-    }
-      break;
-      case 15:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base15], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base15+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base15+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base15+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base15+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base15+24], 2.5);
-        break;
-    }
-      break;
-      case 16:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base16], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base16+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base16+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base16+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base16+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base16+24], 2.5);
-        break;
-    }
-      break;
-      case 17:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base17], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base17+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base17+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base17+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base17+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base17+24], 2.5);
-        break;
-    }
-      break;
-      case 18:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base18], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base18+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base18+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base18+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base18+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base18+24], 2.5);
-        break;
-    }
-      break;
-      case 19:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base19], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base19+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base19+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base19+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base19+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base19+24], 2.5);
-        break;
-    }
-      break;
-      case 20:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base20], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base20+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base20+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base20+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base20+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base20+24], 2.5);
-        break;
-    }
-      break;
-      case 21:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base21], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base21+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base21+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base21+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base21+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base21+24], 2.5);
-        break;
-    }
-      break;
-      case 22:
-        switch(index){
-      case 0:
-
-midiSounds.playChordNow(2, [base22], 2.5);
-        break;
-      case 1:
-midiSounds.playChordNow(2, [base22+5], 2.5);
-        break;
-      case 2:
-midiSounds.playChordNow(2, [base22+10], 2.5);
-        break;
-      case 3:
-midiSounds.playChordNow(2, [base22+15], 2.5);
-        break;
-      case 4:
-midiSounds.playChordNow(2, [base22+19], 2.5); 
-        break;
-      case 5: 
-midiSounds.playChordNow(2, [base22+24], 2.5);
-        break;
-    }
-      break;
-
-  }
-
-}
-
 function App() {
 
-const [majorScale, setMajorScale] = useState(["E_", "F#", "G#","A_", "B_", "C#", "D#"])
-const [minorScale, setMinorScale] = useState(["E_", "F_", "G_","A_", "B_", "C_", "D_", "E_"])
-const [harmMinorScale, setHarmMinorScale]= useState(["E_", "F_", "G_","A_", "B_", "C_", "D#", "E_"])
-const [position, setPosition] = useState(1);
+
+// ▀█▀ █▀█   ▄▀█ █▀▄ █▀▄   █▀ █▀▀ ▄▀█ █░░ █▀▀ █▀ ▄
+// ░█░ █▄█   █▀█ █▄▀ █▄▀   ▄█ █▄▄ █▀█ █▄▄ ██▄ ▄█ ▄
+
+// 1. add the following useState variables: 
+
+// const [diminishedScale, setDiminishedScale] = useState(['','','','','','',])
+// const [diminished, setDiminished] = useState(false)
+
+// 2. add else if statement after existing if statements in renderRow() function.
+// copy the entire else if(minor) statement of renderRow, and change variable names.
+// if(diminished){}...  
+
+// 3. Add an if statement after existing statements in useEffect function.
+// Copy the entire if (major) statement of the useEffect function, change variable names,
+// and define scales for 12 keys within the switch/case statement.
+
+// if(diminished){...
+//   switch(scaleNumber){
+
+//     case 0: ...
+//       setDiminishedScale(["E_", "F#", "G_","A_", "B_", "C_", "D#"])
+//       break;
+
+//scale length is adjustable and should work as is for variable length. 
+//for scales with less than 12 keys, define all 12 cases and make them redundant.
+// ${scaleNumber} defines the current key of your scale (begins with E as 0);
+
+const [majorScale, setMajorScale] = useState([]) // app starts in E major scale
+const [minorScale, setMinorScale] = useState([])
+const [harmMinorScale, setHarmMinorScale]= useState([])
 const [major, setMajor] = useState(true);
 const [minor, setMinor] = useState(false);
 const [harmMinor, setHarmMinor] = useState(false);
-const [scaleNumber, setScaleNumber] = useState(0);
+const [mode, setMode] = useState(1)// mode 1=Ionian, 0=dorian, -1=phrygian, -2=lydian, -3=Mixolydian, -4=Aeolian, -5=locrian
 
-   //starting scale numbers on E as 0, F = 1, etc until D#=11
+const [modeName, setModeName] = useState('Ionian/Root');
+const [position, setPosition] = useState(1);
+const [scaleNumber, setScaleNumber] = useState(0); //scale numbers begin with E=0, F=1, etc until 11
+const [fullFretBoard, setFullFretBoard] = useState(true);
+
 
   useEffect(() => {
     console.log('refresh')
@@ -717,19 +201,20 @@ const [scaleNumber, setScaleNumber] = useState(0);
     
     }
 
-  }, [position, scaleNumber, major, minor, harmMinor])
+  }, [position, scaleNumber, major, minor, harmMinor, modeName])
 
   const renderRow = (names, row) => {
 
-console.log(names, 'neem', row, 'row')
+// console.log(names, 'names', row, 'row')
+
     if(major){
     return (
   
-      <div style={{display: 'flex'}}>
+      <div style={{display: 'flex', }}>
   
         { row<10 ?
         
-        <div style={{marginRight: "11px", textAlign: "left"}}>  {row}</div>:
+        <div style={{marginRight: "11px", textAlign: "left", }}>  {row} </div>:
         <div style={{marginRight: "0px", textAlign: "left"}}>{row}</div>
         }
    { names.map((theName, index) => 
@@ -737,10 +222,10 @@ console.log(names, 'neem', row, 'row')
    theName == majorScale[0] || theName == majorScale[1] || theName == majorScale[2] || theName == majorScale[3]
    || theName == majorScale[4]|| theName == majorScale[5]|| theName == majorScale[6] ?
     
-  <button style={{marginLeft: "10%", width: '30px', }} onClick={()=>{press(index, row, theName)}}><div>
-      {theName.charAt(1) == '_' ? theName.charAt(0) : theName}
+  <button style={{marginLeft: "1%", width: '120%', position:'relative' , border: 'solid 2px'}} onClick={()=>{press(index, row, theName)}}> <div>
+      {theName.charAt(1) == '_' ? theName.charAt(0) + '_' : theName}
       
-      {majorScale.indexOf(theName)+1}</div></button> : <button style={{marginLeft: "10%", width: '80px', opacity: 0,}} 
+      {majorScale.indexOf(theName)+mode == -6 ? '1': majorScale.indexOf(theName)+mode == -5 ? '2': majorScale.indexOf(theName)+mode == -4 ? '3': majorScale.indexOf(theName)+mode == -3 ? '4': majorScale.indexOf(theName)+mode == -2 ? '5': majorScale.indexOf(theName)+mode == -1 ? '6': majorScale.indexOf(theName)+mode == 0 ? '7': majorScale.indexOf(theName)+mode}</div></button> : <button style={{marginLeft: "24%", width: '120%', opacity: 0,}} 
               onClick={()=>{console.log(index,row, theName)}}><div>
       __</div></button>
     
@@ -748,7 +233,6 @@ console.log(names, 'neem', row, 'row')
   
    else if(minor){
 
-  
       return (
     
         <div style={{display: 'flex'}}>
@@ -763,10 +247,10 @@ console.log(names, 'neem', row, 'row')
      theName == minorScale[0] || theName == minorScale[1] || theName == minorScale[2] || theName == minorScale[3]
      || theName == minorScale[4]|| theName == minorScale[5]|| theName == minorScale[6] ?
       
-    <button style={{marginLeft: "10%", width: '30px', }} onClick={()=>{press(index, row, theName)}}><div>
-     {theName.charAt(1) == '_' ? theName.charAt(0) : theName}
+    <button style={{marginLeft: "1%", width: '120%', position:'relative' , border: 'solid 2px'}}  onClick={()=>{press(index, row, theName)}}><div>
+     {theName.charAt(1) == '_' ? theName.charAt(0) +'_' : theName}
      
-     {minorScale.indexOf(theName)+1}</div></button> : <button style={{marginLeft: "10%", width: '80px', opacity: 0,}} 
+     {minorScale.indexOf(theName)+mode == -6 ? '1': minorScale.indexOf(theName)+mode == -5 ? '2': minorScale.indexOf(theName)+mode == -4 ? '3': minorScale.indexOf(theName)+mode == -3 ? '4': minorScale.indexOf(theName)+mode == -2 ? '5': minorScale.indexOf(theName)+mode == -1 ? '6': minorScale.indexOf(theName)+mode == 0 ? '7': minorScale.indexOf(theName)+mode}</div></button> : <button style={{marginLeft: "24%", width: '120%', opacity: 0,}} 
                 onClick={()=>{console.log(index,row, theName)}}><div>
         __</div></button>
 
@@ -789,9 +273,9 @@ console.log(names, 'neem', row, 'row')
        theName == harmMinorScale[0] || theName == harmMinorScale[1] || theName == harmMinorScale[2] || theName == harmMinorScale[3]
        || theName == harmMinorScale[4]|| theName == harmMinorScale[5]|| theName == harmMinorScale[6] ?
         
-      <button style={{marginLeft: "10%", width: '30px', }} onClick={()=>{press(index, row, theName)}}><div>
-        {theName.charAt(1) == '_' ? theName.charAt(0) : theName}
-          {harmMinorScale.indexOf(theName)+1}</div></button> : <button style={{marginLeft: "10%", width: '80px', opacity: 0,}} 
+      <button style={{marginLeft: "1%", width: '120%', position:'relative' , border: 'solid 2px'}} onClick={()=>{press(index, row, theName)}}><div>
+        {theName.charAt(1) == '_' ? theName.charAt(0)+ '_' : theName}
+        {harmMinorScale.indexOf(theName)+mode == -6 ? '1': harmMinorScale.indexOf(theName)+mode == -5 ? '2': harmMinorScale.indexOf(theName)+mode == -4 ? '3': harmMinorScale.indexOf(theName)+mode == -3 ? '4': harmMinorScale.indexOf(theName)+mode == -2 ? '5': harmMinorScale.indexOf(theName)+mode == -1 ? '6': harmMinorScale.indexOf(theName)+mode == 0 ? '7': harmMinorScale.indexOf(theName)+mode}</div></button> :  <button style={{marginLeft: "24%", width: '120%', opacity: 0,}} 
                   onClick={()=>{console.log(index,row, theName)}}><div>
           __</div></button>
         
@@ -801,15 +285,601 @@ console.log(names, 'neem', row, 'row')
     
   }
 
+  const press = (index, row) => {
+
+    console.log(row, index)
+  
+    switch(row){
+  
+        case 0:
+        switch(index){
+          case 0:
+  
+    midiSounds.playChordNow(2,[base], 2.5);
+            break;
+          case 1:
+    midiSounds.playChordNow(2, [base+5], 2.5);
+            break;
+          case 2:
+    midiSounds.playChordNow(2, [base+10], 2.5);
+            break;
+          case 3:
+    midiSounds.playChordNow(2, [base+15], 2.5);
+            break;
+          case 4:
+    midiSounds.playChordNow(2, [base+19], 2.5); 
+            break;
+          case 5: 
+    midiSounds.playChordNow(2, [base+24], 2.5);
+            break;
+        }
+        break;
+        case 1:
+        switch(index){
+          case 0:
+    
+    midiSounds.playChordNow(2, [base1], 2.5);
+            break;
+          case 1:
+    midiSounds.playChordNow(2, [base1+5], 2.5);
+            break;
+          case 2:
+    midiSounds.playChordNow(2, [base1+10], 2.5);
+            break;
+          case 3:
+    midiSounds.playChordNow(2, [base1+15], 2.5);
+            break;
+          case 4:
+    midiSounds.playChordNow(2, [base1+19], 2.5); 
+            break;
+          case 5: 
+    midiSounds.playChordNow(2, [base1+24], 2.5);
+            break;
+        }
+        break;
+        case 2:
+  
+        switch(index){
+          case 0:
+    
+    midiSounds.playChordNow(2, [base2], 2.5);
+            break;
+          case 1:
+    midiSounds.playChordNow(2, [base2+5], 2.5);
+            break;
+          case 2:
+    midiSounds.playChordNow(2, [base2+10], 2.5);
+            break;
+          case 3:
+    midiSounds.playChordNow(2, [base2+15], 2.5);
+            break;
+          case 4:
+    midiSounds.playChordNow(2, [base2+19], 2.5); 
+            break;
+          case 5: 
+    midiSounds.playChordNow(2, [base2+24], 2.5);
+            break;
+        }
+  
+          break;
+        case 3:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base3], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base3+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base3+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base3+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base3+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base3+24], 2.5);
+          break;
+      }
+          break;
+        case 4:
+  
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base4], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base4+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base4+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base4+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base4+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base4+24], 2.5);
+          break;
+      }
+        break;
+        case 5:
+  
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base5], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base5+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base5+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base5+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base5+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base5+24], 2.5);
+          break;
+      }
+        break;
+        case 6:
+  
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base6], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base6+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base6+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base6+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base6+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base6+24], 2.5);
+          break;
+      }
+        break;
+        case 7:
+  
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base7], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base7+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base7+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base7+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base7+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base7+24], 2.5);
+          break;
+      }
+        break;
+        case 8:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base8], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base8+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base8+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base8+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base8+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base8+24], 2.5);
+          break;
+      }
+        break;
+        case 9:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base9], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base9+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base9+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base9+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base9+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base9+24], 2.5);
+          break;
+      }
+        break;
+        case 10:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base10], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base10+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base10+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base10+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base10+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base10+24], 2.5);
+          break;
+      }
+        break;
+        case 11:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base11], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base11+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base11+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base11+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base11+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base11+24], 2.5);
+          break;
+      }
+        break;
+        case 12:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base12], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base12+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base12+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base12+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base12+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base12+24], 2.5);
+          break;
+      }
+        break;
+        case 13:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base13], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base13+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base13+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base13+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base13+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base13+24], 2.5);
+          break;
+      }
+        break;
+        case 14:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base14], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base14+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base14+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base14+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base14+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base14+24], 2.5);
+          break;
+      }
+        break;
+        case 15:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base15], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base15+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base15+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base15+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base15+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base15+24], 2.5);
+          break;
+      }
+        break;
+        case 16:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base16], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base16+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base16+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base16+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base16+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base16+24], 2.5);
+          break;
+      }
+        break;
+        case 17:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base17], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base17+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base17+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base17+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base17+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base17+24], 2.5);
+          break;
+      }
+        break;
+        case 18:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base18], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base18+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base18+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base18+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base18+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base18+24], 2.5);
+          break;
+      }
+        break;
+        case 19:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base19], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base19+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base19+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base19+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base19+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base19+24], 2.5);
+          break;
+      }
+        break;
+        case 20:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base20], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base20+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base20+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base20+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base20+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base20+24], 2.5);
+          break;
+      }
+        break;
+        case 21:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base21], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base21+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base21+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base21+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base21+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base21+24], 2.5);
+          break;
+      }
+        break;
+        case 22:
+          switch(index){
+        case 0:
+  
+  midiSounds.playChordNow(2, [base22], 2.5);
+          break;
+        case 1:
+  midiSounds.playChordNow(2, [base22+5], 2.5);
+          break;
+        case 2:
+  midiSounds.playChordNow(2, [base22+10], 2.5);
+          break;
+        case 3:
+  midiSounds.playChordNow(2, [base22+15], 2.5);
+          break;
+        case 4:
+  midiSounds.playChordNow(2, [base22+19], 2.5); 
+          break;
+        case 5: 
+  midiSounds.playChordNow(2, [base22+24], 2.5);
+          break;
+      }
+        break;
+  
+    }
+  
+  }
+
+  const checkMode = () => {
+console.log('thefucking mode is', mode)
+
+if(major){
+    switch(mode){
+      case -5:
+        setMode(1)
+        setModeName('Ionian/Root')
+        break;
+      case -4:
+        setModeName("Locrian")
+        break;
+      case-3:
+      setModeName('Aeolian/Minor')
+        break;
+      case -2:
+        setModeName("Mixolydian")
+        break;
+      case -1:
+        setModeName("Lydian")
+        break;
+      case 0:
+        setModeName('Phrygian')
+        break;
+        case 1: setModeName('Dorian')
+        break;
+      default:
+        console.log('default reached by impossibility');
+        break;
+    
+    }
+  }
+
+  else if(mode==-5){
+    setMode(1)
+    setModeName(mode)}
+    
+    else setModeName(mode)
+  }
+
 let rowrender1 = `row${position-1}`
 let rowrender2= `row${position}`
 let rowrender3 = `row${position+1}`
 let rowrender4 = `row${position+2}`
 let rowrender5 = `row${position+3}`
-const [fullFretBoard, setFullFretBoard] = useState(true);
+
+// mode 1=Ionian, 0=dorian, -1=phrygian, -2=lydian, -3=Mixolydian, -4=Aeolian, -5=locrian
 
   return (
-
     <>
 <div style = {{display: "none"}}>
     <MIDISounds ref={(ref) => (midiSounds = ref)} appElementName="root" instruments={[7]} />	</div>
@@ -817,7 +887,6 @@ const [fullFretBoard, setFullFretBoard] = useState(true);
     <div className="App" style={{width: "3%", marginTop: '200px', marginBottom: '20px', margin:'auto', marginLeft: "40%", alignItems:'center', justifyContent: 'center', }}>
 
       <div style={{}}>
-
 
         {fullFretBoard ?
 
@@ -837,29 +906,54 @@ const [fullFretBoard, setFullFretBoard] = useState(true);
 </div>
     </div>
 
-
-<div style={{margin:'auto',  width: "15%"}}>
-   <div style={{width: "100%", marginTop: "10%",fontWeight: 'bold'}}> Position: {position}</div>
-   <div style={{fontWeight: 'bold' }}> Key: {major ? majorScale[0] : minor ? minorScale[0] : harmMinor ? harmMinorScale[0]: null}
+<div style={{margin:'auto',  width: "18%"}}>
+   <div style={{width: "100%", marginTop: "4%",fontWeight: 'bold'}}> Position: {position}, Key: {major ? majorScale[0] : minor ? minorScale[0] : harmMinor ? harmMinorScale[0]: null}
    { major? ' major': minor ? ' minor' : harmMinor ? ' harmonic' : null   }
    </div>
-   <div style={{fontWeight: 'bold'}}>Scale Number: {scaleNumber}</div> <br />
-   <button style={{ borderRadius: '1rem',
-      alignItems: 'center', }} onClick={()=>{if(position<19)setPosition(prevState=>prevState+1)}}>Position 🠕</button>
+   {/* <div style={{fontWeight: 'bold'}}>Scale Number: {scaleNumber}</div>  */}
 
+   { major?<>
+   <div style={{fontWeight: 'bold'}}>Mode: {modeName}</div></>: null}
+
+
+   { !fullFretBoard ?
+
+<>
     <button style={{ textAlign: 'center',  borderRadius: '1rem',
       alignItems: 'center', marginBottom: '3%'}} onClick={()=>{if(position>1)setPosition(prevState=>prevState-1)}}>Position 🠗</button>
+         <button style={{ borderRadius: '1rem',
+      alignItems: 'center', }} onClick={()=>{if(position<19)setPosition(prevState=>prevState+1)}}>Position 🠕</button></> : null}
    
       <br />
 
+      <button style={{borderRadius: '1rem',fontWeight: 'bold', marginBottom: '3%'}} onClick={()=>{if(scaleNumber>0)setScaleNumber(scaleNumber-1)}}>key 🠗</button>
 <button style={{borderRadius: '1rem'}} onClick={()=>{if(scaleNumber<11)setScaleNumber(scaleNumber+1)}}>key 🠕</button>
-<button style={{borderRadius: '1rem',fontWeight: 'bold', marginBottom: '3%'}} onClick={()=>{if(scaleNumber>0)setScaleNumber(scaleNumber-1)}}>key 🠗</button>
+
+<br />
+
+
+<button style={{borderRadius: '1rem',fontWeight: 'bold', marginBottom: '3%'}} 
+                  onClick={()=>{  setMode(mode-1); console.log(mode, 'new mode'); checkMode()}}>Mode </button>
+                 
+
 <br />
 <button style={{borderRadius: '1rem'}} onClick={() =>{setMajor(true); setMinor(false); setHarmMinor(false)}}>Major{major}</button>
 <button style={{borderRadius: '1rem'}} onClick={() =>{setMajor(false); setMinor(true); setHarmMinor(false)}}>Minor{major}</button>
 <button style={{borderRadius: '1rem',textAlign: "center"}} onClick={() => {setHarmMinor(true); setMinor(false); setMajor(false)}}>Harmonic{harmMinor}</button>
 
+
+{/* <button style={{borderRadius: '1rem'}} onClick={()=>{ if(modeName=="Ionian/Root"){return;} 
+if(mode==0){setMode(0);checkMode()}
+}}>mode 🠗</button> */}
+
+
+<hr />
+
+
 <button style={{borderRadius: '1rem', textAlign: 'center'}} onClick={()=>{setFullFretBoard(prevState=>!prevState)}}>{fullFretBoard ? 'Full' : 'Position'}</button>
+<br />
+
+
 
 </div>
     </>

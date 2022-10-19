@@ -8,10 +8,10 @@
 html {text-align: center;
   align-items: center;
   justify-content: center;
-background-color: magenta;
+background-color: rgb(28, 132, 235);
 }
 
-button {background-color: black; color: white; font-weight: 600; border-radius: .2em; margin-right: 4px;} 
+button {background-color: black; color: white; font-weight: 600; border-radius: "90%";} 
 
 .App-logo {
   height: 40vmin;
