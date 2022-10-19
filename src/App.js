@@ -119,7 +119,7 @@ const [fullFretBoard, setFullFretBoard] = useState(true);
           break;
           case 5: setMajorScale(["A_","B_","C#","D_","E_","F#","G#"])
           break;
-          case 6: setMajorScale(["A#","C_","C#","D#","F_","G_","A_"])
+          case 6: setMajorScale(["A#","C_","D_","D#","F_","G_","A_"])
           break;
           case 7: setMajorScale(["B_","C#","D#","E_","F#","G#","A#"])
           break;
