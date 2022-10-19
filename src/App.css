@@ -1,6 +1,15 @@
 .App {
   text-align: center;
+  align-items: center;
+  justify-content: center;
+ 
 }
+
+html {text-align: center;
+  align-items: center;
+  justify-content: center;}
+
+button {background-color: black; color: white; font-weight: 600; border-radius: .2em;} 
 
 .App-logo {
   height: 40vmin;

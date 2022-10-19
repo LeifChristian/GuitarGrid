@@ -700,7 +700,7 @@ const [harmMinorScale, setHarmMinorScale]= useState(["E_", "F_", "G_","A_", "B_"
         case 0: // E default
           setHarmMinorScale(["E_", "F#", "G_","A_", "B_", "C_", "D#"])
           break;
-          case 1: setHarmMinorScale( ["F_", "G_", "G#", "A#", "C#", "D#", "E#"])
+          case 1: setHarmMinorScale( ["F_", "G_", "G#", "A#", "C_", "C#", "E_"])
           break;
           case 2: setHarmMinorScale(["F#","G#","A_","B_","C#","D_","F_"])
           break;
@@ -737,10 +737,6 @@ const [harmMinorScale, setHarmMinorScale]= useState(["E_", "F_", "G_","A_", "B_"
   
 console.log(names, 'neem', row, 'row')
     if(major){
-       let theNewVar = `emajrow${row}` 
-      console.log(theNewVar, 'nbewvar')
-
-  
     return (
   
       <div style={{display: 'flex'}}>
@@ -748,7 +744,7 @@ console.log(names, 'neem', row, 'row')
         { row<10 ?
         
         <div style={{marginRight: "11px", textAlign: "left"}}>  {row}</div>:
-        <div style={{marginRight: "2px", textAlign: "left"}}>{row}</div>
+        <div style={{marginRight: "0px", textAlign: "left"}}>{row}</div>
         }
    { names.map((theName, index) => 
   
@@ -756,7 +752,9 @@ console.log(names, 'neem', row, 'row')
    || theName == majorScale[4]|| theName == majorScale[5]|| theName == majorScale[6] ?
     
   <button style={{marginLeft: "10%", width: '30px', }} onClick={()=>{press(index, row, theName)}}><div>
-      {theName}{majorScale.indexOf(theName)+1}</div></button> : <button style={{marginLeft: "10%", width: '80px', opacity: 0,}} 
+      {theName.charAt(1) == '_' ? theName.charAt(0) : theName}
+      
+      {majorScale.indexOf(theName)+1}</div></button> : <button style={{marginLeft: "10%", width: '80px', opacity: 0,}} 
               onClick={()=>{console.log(index,row, theName)}}><div>
       __</div></button>
     
@@ -780,7 +778,9 @@ console.log(names, 'neem', row, 'row')
      || theName == minorScale[4]|| theName == minorScale[5]|| theName == minorScale[6] ?
       
     <button style={{marginLeft: "10%", width: '30px', }} onClick={()=>{press(index, row, theName)}}><div>
-     {theName}{minorScale.indexOf(theName)+1}</div></button> : <button style={{marginLeft: "10%", width: '80px', opacity: 0,}} 
+     {theName.charAt(1) == '_' ? theName.charAt(0) : theName}
+     
+     {minorScale.indexOf(theName)+1}</div></button> : <button style={{marginLeft: "10%", width: '80px', opacity: 0,}} 
                 onClick={()=>{console.log(index,row, theName)}}><div>
         __</div></button>
 
@@ -788,8 +788,6 @@ console.log(names, 'neem', row, 'row')
       )} </div> )}
   
    else if(harmMinor){
-
-    let theNewVar = `eharmminrow${row}` 
   
         return (
       
@@ -806,7 +804,8 @@ console.log(names, 'neem', row, 'row')
        || theName == harmMinorScale[4]|| theName == harmMinorScale[5]|| theName == harmMinorScale[6] ?
         
       <button style={{marginLeft: "10%", width: '30px', }} onClick={()=>{press(index, row, theName)}}><div>
-          {theName}{harmMinorScale.indexOf(theName)+1}</div></button> : <button style={{marginLeft: "10%", width: '80px', opacity: 0,}} 
+        {theName.charAt(1) == '_' ? theName.charAt(0) : theName}
+          {harmMinorScale.indexOf(theName)+1}</div></button> : <button style={{marginLeft: "10%", width: '80px', opacity: 0,}} 
                   onClick={()=>{console.log(index,row, theName)}}><div>
           __</div></button>
         
@@ -822,9 +821,9 @@ console.log(names, 'neem', row, 'row')
 <div style = {{display: "none"}}>
     <MIDISounds ref={(ref) => (midiSounds = ref)} appElementName="root" instruments={[7]} />	</div>
 
-    <div className="App" style={{width: "3%", marginTop: '100px', marginBottom: '20px', margin:'auto', marginLeft: "42%", alignItems:'center', justifyContent: 'center', }}>
+    <div className="App" style={{width: "3%", marginTop: '200px', marginBottom: '20px', margin:'auto', marginLeft: "40%", alignItems:'center', justifyContent: 'center', }}>
 
-      <div style={{width: "100%"}}>
+      <div style={{}}>
 
      {position === 1 ? [renderRow(row0, 0),renderRow(row1, 1), renderRow(row2, 2), renderRow(row3, 3), renderRow(row4, 4), renderRow(row5, 5)]: null}
  
@@ -847,48 +846,33 @@ console.log(names, 'neem', row, 'row')
       renderRow(row19,19),
       renderRow(row20,20)]: null}
 
-      {/* {renderRow(row21,21)}
-      {renderRow(row22,22)} */}
-
-     {/* {[ renderRow(row0, 0),
-      renderRow(row1, 1), 
-      renderRow(row2, 2), 
-      renderRow(row3, 3), 
-      renderRow(row4, 4), 
-      renderRow(row5, 5),
-      renderRow(row6, 6),
-      renderRow(row7,7),
-      renderRow(row8,8),
-      renderRow(row9,9),
-      renderRow(row10,10),
-      renderRow(row12,12),
-      renderRow(row13,13),
-      renderRow(row14,14),
-      renderRow(row15,15),
-      renderRow(row17,17),
-      renderRow(row18,18),
-      renderRow(row19,19),
-      renderRow(row20,20)   ]} */}
-
 </div>
     </div>
 
 
-<div style={{margin:'auto', alignItems:'center', texjustifyContent: 'center', width: "10%"}}>
-   <div style={{width: "100%", marginLeft: '1.8em', marginTop: "10%"}}> position: {position}</div>
+<div style={{margin:'auto',  width: "10%"}}>
+   <div style={{width: "100%", marginTop: "10%"}}> position: {position}</div>
+   <div style={{width: "100%", marginTop: "10%"}}> key: {major ? majorScale[0] : minor ? minorScale[0] : harmMinor ? harmMinorScale[0]: null}
+   {major? <div style={{textAlign: "center"}}>major</div> : minor ? <div style={{textAlign: "center"}}>minor</div> : harmMinor ? <div style={{textAlign: "center"}}>harmonic</div> : null   }
+   </div>
+   <div style={{width: "100%", marginTop: "10%"}}> Scale Number: {scaleNumber}</div>
+
+
     <button style={{marginTop: '10%', textAlign: 'center', position: 'relative', justifyContent: 'center', borderRadius: '1rem',
-      alignItems: 'center', width: "100%"}} onClick={()=>{if(position>1)setPosition(prevState=>prevState-1)}}>position down</button>
+      alignItems: 'center'}} onClick={()=>{if(position>1)setPosition(prevState=>prevState-1)}}>position down</button>
      <button style={{justifyContent: 'center', borderRadius: '1rem',
-      alignItems: 'center', width: "100%"}} onClick={()=>{if(position<4)setPosition(prevState=>prevState+1)}}>position up</button>
+      alignItems: 'center', }} onClick={()=>{if(position<4)setPosition(prevState=>prevState+1)}}>position up</button>
 
-<button onClick={()=>{if(scaleNumber>-1)setScaleNumber(scaleNumber+1)}}>up {scaleNumber}</button>
-<button onClick={()=>{if(scaleNumber<11)setScaleNumber(scaleNumber-1)}}>down{scaleNumber}</button>
+      <br />
 
-{major? <div>major</div> : minor ? <div>minor</div> : harmMinor ? <div>harmonic</div> : null   }
+<button style={{borderRadius: '1rem'}} onClick={()=>{if(scaleNumber<11)setScaleNumber(scaleNumber+1)}}>up </button>
+<button style={{borderRadius: '1rem'}} onClick={()=>{if(scaleNumber>0)setScaleNumber(scaleNumber-1)}}>down</button>
 
-<button onClick={() =>{setMajor(true); setMinor(false); setHarmMinor(false)}}>Major{major}</button>
-<button onClick={() =>{setMajor(false); setMinor(true); setHarmMinor(false)}}>Minor{major}</button>
-<button onClick={() => {setHarmMinor(true); setMinor(false); setMajor(false)}}>Harmonic{harmMinor}</button>
+
+
+<button style={{borderRadius: '1rem'}} onClick={() =>{setMajor(true); setMinor(false); setHarmMinor(false)}}>Major{major}</button>
+<button style={{borderRadius: '1rem'}} onClick={() =>{setMajor(false); setMinor(true); setHarmMinor(false)}}>Minor{major}</button>
+<button style={{borderRadius: '1rem',textAlign: "center"}} onClick={() => {setHarmMinor(true); setMinor(false); setMajor(false)}}>Harmonic{harmMinor}</button>
 
 </div>
     </>
