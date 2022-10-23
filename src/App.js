@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 
 let midiSounds;
 
+// defining rows as frets
+
 let row0;
 let row1;
 let row2;
@@ -351,7 +353,32 @@ function App() {
             theName == majorScale[3] ||
             theName == majorScale[4] ||
             theName == majorScale[5] ||
-            theName == majorScale[6] ? (
+            theName == majorScale[6] ? 
+            
+            (theName == "F_" && majorScale[6] == "F_" ?   
+              
+            <button
+            style={{ width: 40, position: "relative", border: "solid 2px" }}
+            onClick={() => {
+              press(index, row, theName);
+            }}
+          >
+            <div>
+              E#7
+            </div>
+          </button>: theName == "C_" && majorScale[6] == "C_" ?   
+              
+              <button
+              style={{ width: 40, position: "relative", border: "solid 2px" }}
+              onClick={() => {
+                press(index, row, theName);
+              }}
+            >
+              <div>
+                B#7
+              </div>
+            </button>:
+              
               <button
                 style={{ width: 40, border: "solid 2px" }}
                 onClick={() => {
@@ -503,7 +530,9 @@ function App() {
             theName == harmMinorScale[5] ||
             theName == harmMinorScale[6] ? (
 
-              theName == "F_" && harmMinorScale[6] == "F_" ?   <button
+              theName == "F_" && harmMinorScale[6] == "F_" ?   
+              
+              <button
               style={{ width: 40, position: "relative", border: "solid 2px" }}
               onClick={() => {
                 press(index, row, theName);
@@ -512,7 +541,11 @@ function App() {
               <div>
                 E##7
               </div>
-            </button> : theName == "C_" && harmMinorScale[6] == "C_" ?   <button
+            </button> 
+            
+            : theName == "C_" && harmMinorScale[6] == "C_" ?   
+            
+            <button
               style={{ width: 40, position: "relative", border: "solid 2px" }}
               onClick={() => {
                 press(index, row, theName);
@@ -521,7 +554,11 @@ function App() {
               <div>
                 B#7
               </div>
-            </button> : theName == "G_" && harmMinorScale[6] == "G_" ?   <button
+            </button> 
+            
+            : theName == "G_" && harmMinorScale[6] == "G_" ?   
+            
+            <button
               style={{ width: 40, position: "relative", border: "solid 2px" }}
               onClick={() => {
                 press(index, row, theName);
@@ -1225,7 +1262,7 @@ function App() {
                   marginBottom: "1%",
                 }}
                 onClick={() => {
-                  if (position > 1) setPosition((prevState) => prevState - 1);
+                  if (position > 1) setPosition((prevState) => prevState + 1);
                 }}
               >
                 Position 🠗
