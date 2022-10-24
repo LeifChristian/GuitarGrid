@@ -1262,7 +1262,7 @@ function App() {
                   marginBottom: "1%",
                 }}
                 onClick={() => {
-                  if (position > 1) setPosition((prevState) => prevState + 1);
+                  if (position > 1) setPosition((prevState) => prevState - 1);
                 }}
               >
                 Position 🠗
@@ -1270,7 +1270,7 @@ function App() {
               <button
                 style={{ borderRadius: "1rem", alignItems: "center" }}
                 onClick={() => {
-                  if (position < 19) setPosition((prevState) => prevState + 1);
+                  if (position < 19) setPosition((prevState) => prevState +1);
                 }}
               >
                 Position 🠕
